@@ -1,0 +1,14 @@
+.page-header
+  = link_to products_path, class: 'btn btn-default f-right MarTop25' do
+    %span.glyphicon.glyphicon-list-alt
+    Back
+  = link_to edit_product_path(@product), class: 'btn btn-primary f-right MarTop25' do
+    %span.glyphicon.glyphicon-pencil
+    Edit
+  %h1.f-left Show product
+  .clear
+%dl.dl-horizontal
+  %dt Name:
+  %dd= @product.name
+  %dt Description:
+  %dd= @product.description

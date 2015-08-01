@@ -1,0 +1,12 @@
+.page-header
+  = link_to categories_path, class: 'btn btn-default f-right MarTop25' do
+    %span.glyphicon.glyphicon-list-alt
+    Back
+  = link_to @category, class: 'btn btn-primary f-right MarTop25' do
+    %span.glyphicon.glyphicon-pencil
+    Show
+  %h1.f-left Show category
+  .clear
+  %h1 Editing category
+
+= render 'form'

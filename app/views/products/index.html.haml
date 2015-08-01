@@ -1,0 +1,18 @@
+.page-header
+  %a{href: new_product_path, class: 'btn btn-primary f-right MarTop25'}
+    %span.glyphicon.glyphicon-plus
+    New Product
+  %h1.f-left Listing products
+  .clear
+= form_tag "/products", :id => "search-frm", :method => "get", :remote => true do 
+  %label Categories:
+  = select_tag "c", options_for_select(Category.pluck(:name, :id), params[:c]), :prompt => "Select", :id => "cat-filter"
+.table-responsive#table-data
+  = render "products"
+
+
+
+:javascript
+  $("#cat-filter").change(function(){
+    $("#search-frm").submit();
+  });
