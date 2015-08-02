@@ -12,7 +12,7 @@ class ProductsController < ApplicationController
 		respond_to do |format|
 			format.html
 			format.js
-			format.json { render json: @products }
+			format.json { render json: @products.collect{|p| p.attributes.merge({"categories" => p.product_categories.collect{|pc| pc.category}})} }
 			
 		end
   end
